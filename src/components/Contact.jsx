@@ -2,6 +2,8 @@ import styled from "styled-components";
 import MapChart from "./MapChart";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Section = styled.section`
   height: 100vh;
@@ -63,6 +65,12 @@ const Right = styled.section`
   flex: 1;
 `;
 
+const Message = styled.h1`
+  font-weight: 600;
+  font-size: 2em;
+  background-color: green;
+`;
+
 export const Contact = () => {
   const form = useRef();
   const [success, setSuccess] = useState(null);
@@ -81,6 +89,20 @@ export const Contact = () => {
         (result) => {
           console.log(result.text);
           setSuccess(true);
+          toast.success(
+            "Your message has been sent. I'll get back to you soon :)",
+            {
+              position: "bottom-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            }
+          );
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -88,6 +110,8 @@ export const Contact = () => {
         }
       );
   };
+
+  const notify = () => toast(" ");
 
   return (
     <Section>
@@ -103,8 +127,18 @@ export const Contact = () => {
               rows={10}
             />
             <Button type="submit">Send</Button>
-            {success &&
-              "Your message has been sent. We'll get back to you soon :)"}
+            <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover={true}
+              theme="dark"
+            />
           </Form>
         </Left>
         <Right>
