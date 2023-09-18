@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MapChart from "./MapChart";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -73,7 +73,6 @@ const Message = styled.h1`
 
 export const Contact = () => {
   const form = useRef();
-  const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -88,7 +87,6 @@ export const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setSuccess(true);
           toast.success(
             "Your message has been sent. I'll get back to you soon :)",
             {
@@ -106,7 +104,6 @@ export const Contact = () => {
         },
         (error) => {
           console.log(error.text);
-          setSuccess(false);
         }
       );
   };
