@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { WebDesign } from "./WebDesign";
 
 const data = [
   "Web Design",
@@ -86,7 +87,9 @@ export const Works = () => {
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          <WebDesign />
+        </Right>
       </Container>
     </Section>
   );
