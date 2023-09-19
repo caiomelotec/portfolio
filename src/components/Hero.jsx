@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Canvas } from "@react-three/fiber";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import styled from "styled-components";
 import { NavBar } from "./NavBar";
 
@@ -109,7 +110,19 @@ export const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          {/*3D model */}
+          <Canvas>
+            <OrbitControls enableZoom={false} autoRotate />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Sphere args={[1, 100, 200]} scale={1.1}>
+              <MeshDistortMaterial
+                color="rgb(23, 0, 136)"
+                attach="material"
+                distort={0.5}
+                speed={2}
+              />
+            </Sphere>
+          </Canvas>{" "}
           <Img src="./img/moon02.png" className="img" />
         </Right>
       </Container>
