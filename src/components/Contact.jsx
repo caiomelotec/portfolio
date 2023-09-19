@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Section = styled.section`
   height: 100vh;
-
   scroll-snap-align: center;
 `;
 
