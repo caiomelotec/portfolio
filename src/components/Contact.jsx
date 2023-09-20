@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MapChart from "./MapChart";
+
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,11 +23,14 @@ const Left = styled.section`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 const Title = styled.h1`
   font-weight: 600;
   font-size: 2em;
-  background-color: rgb(3, 107, 243);
 `;
 
 const Form = styled.form`
@@ -35,6 +38,11 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    width: 300px;
+  }
 `;
 
 const Input = styled.input`
@@ -51,17 +59,21 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  color: white;
+  color: black;
   border: none;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
-  background-color: rgb(3, 107, 243);
+  background-color: yellow;
 `;
 
 const Right = styled.section`
   flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Message = styled.h1`
@@ -137,9 +149,7 @@ export const Contact = () => {
             />
           </Form>
         </Left>
-        <Right>
-          <MapChart />
-        </Right>
+        <Right></Right>
       </Container>
     </Section>
   );
