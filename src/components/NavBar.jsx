@@ -3,6 +3,10 @@ import styled from "styled-components";
 const Section = styled.div`
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const Container = styled.div`
   width: 1400px;
@@ -10,6 +14,11 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 const Links = styled.div`
   display: flex;
@@ -31,19 +40,6 @@ const List = styled.ul`
 const ListItem = styled.li`
   cursor: pointer;
 `;
-const Icon = styled.img`
-  width: 22px;
-  cursor: pointer;
-`;
-const Button = styled.button`
-  cursor: pointer;
-  width: 100px;
-  padding: 10px;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  background-color: rgb(3, 107, 243);
-`;
 
 import React from "react";
 
@@ -55,15 +51,11 @@ export const NavBar = () => {
           <Logo>Logo</Logo>
           <List>
             <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
+            <ListItem>About</ListItem>
+            <ListItem>Projects</ListItem>
             <ListItem>Contact</ListItem>
           </List>
         </Links>
-        <Icons>
-          <Icon src="./img/search.png"></Icon>
-          <Button>Hire Now</Button>
-        </Icons>
       </Container>
     </Section>
   );
