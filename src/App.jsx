@@ -1,6 +1,6 @@
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
-import { Who } from "./components/Who";
+import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import styled from "styled-components";
 import "./style/App.css";
@@ -25,7 +25,7 @@ function App() {
   return (
     <Container>
       <Hero />
-      <Who />
+      <About />
       <Projects />
       <Contact />
     </Container>
