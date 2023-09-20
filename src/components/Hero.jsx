@@ -1,8 +1,9 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import styled from "styled-components";
 import { NavBar } from "./NavBar";
+import { WebDesign } from "./WebDesign";
 
 const Section = styled.section`
   height: 100vh;
@@ -11,6 +12,10 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 
 const Container = styled.section`
@@ -19,22 +24,40 @@ const Container = styled.section`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Left = styled.section`
   flex: 2;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    flex-direction: column;
+
+    align-items: center;
+  }
 `;
 const Title = styled.h1`
   font-size: 74px;
+
   @media only screen and (max-width: 768px) {
     text-align: center;
+    font-size: 30px;
   }
 `;
-const WhatWeDo = styled.div`
+const WhatIDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,18 +73,21 @@ const Subtitle = styled.h2`
 
 const Desc = styled.p`
   font-size: 30px;
-  background-color: rgb(3, 107, 243);
-  color: lightgray;
+
+  color: yellow;
+
   @media only screen and (max-width: 768px) {
+    font-size: 20px;
     padding: 20px;
     text-align: center;
+    width: 50%;
   }
 `;
 
 const Button = styled.button`
-  background-color: rgb(3, 107, 243);
-  color: white;
-  font-weight: 500;
+  background-color: yellow;
+  color: blck;
+  font-weight: 800;
   width: 100px;
   padding: 10px;
   border: none;
@@ -70,8 +96,14 @@ const Button = styled.button`
 `;
 
 const Right = styled.section`
-  flex: 3;
+  flex: 1;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+    height: 50vh;
+  }
 `;
 const Img = styled.img`
   width: 600px;
@@ -92,6 +124,11 @@ const Img = styled.img`
       transform: rotate(360deg);
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+    width: 300px;
+  }
 `;
 export const Hero = () => {
   return (
@@ -99,31 +136,16 @@ export const Hero = () => {
       <NavBar />
       <Container>
         <Left>
-          <Title>Think. Make. Solve.</Title>
-          <WhatWeDo>
+          <Title>Crafting Digital Excellence, One Line of Code at a Time</Title>
+          <WhatIDo>
             <Line src="./img/line.png" />
-            <Subtitle>What we Do</Subtitle>
-          </WhatWeDo>
-          <Desc>
-            we enjoy creating delightful, human-centered digital experiences.
-          </Desc>
-          <Button>Learn More</Button>
+            <Subtitle>What I do</Subtitle>
+          </WhatIDo>
+          <Desc>Specializing in Frontend Web Development</Desc>
+          <Button>Explore My Work</Button>
         </Left>
         <Right>
-          <Canvas>
-            <OrbitControls enableZoom={false} autoRotate />
-            <ambientLight intensity={1} />
-            <directionalLight position={[3, 2, 1]} />
-            <Sphere args={[1, 100, 200]} scale={1.1}>
-              <MeshDistortMaterial
-                color="rgb(23, 0, 136)"
-                attach="material"
-                distort={0.5}
-                speed={2}
-              />
-            </Sphere>
-          </Canvas>{" "}
-          <Img src="./img/moon02.png" className="img" />
+          <WebDesign />
         </Right>
       </Container>
     </Section>
