@@ -6,7 +6,7 @@ import React from "react";
 export const WebDesign = () => {
   return (
     <Canvas>
-      <Stage environment="city" intensity={0.6}>
+      <Stage environment="city" intensity={0.2}>
         <Reactlogo />
       </Stage>
       <OrbitControls autoRotate enableZoom={false} />
