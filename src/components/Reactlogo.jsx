@@ -20,9 +20,9 @@ export default function Model(props) {
         material={materials["Material.002"]}
         position={[0, 0.079, 0.181]}
         rotation={[0, 0, -Math.PI / 2]}
-        scale={0.1}
+        scale={[0.03, 0.03, 0.03]}
       >
-        <meshStandardMaterial color="rgb(23, 150, 200)" />
+        <meshStandardMaterial color="yellow" />
       </mesh>
     </group>
   );
