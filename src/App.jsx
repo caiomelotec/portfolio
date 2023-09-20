@@ -1,5 +1,5 @@
 import { Hero } from "./components/Hero";
-import { Works } from "./components/Works";
+import { Projects } from "./components/Projects";
 import { Who } from "./components/Who";
 import { Contact } from "./components/Contact";
 import styled from "styled-components";
@@ -14,7 +14,7 @@ const Container = styled.div`
   color: white;
   object-fit: cover;
   background: url("../public/img/bg-stars.jpg");
-  background-repeat: no-repeat;
+
   background-size: 100%;
   &::-webkit-scrollbar {
     display: none;
@@ -26,7 +26,7 @@ function App() {
     <Container>
       <Hero />
       <Who />
-      <Works />
+      <Projects />
       <Contact />
     </Container>
   );
